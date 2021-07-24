@@ -2,11 +2,19 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:notes/domain/core/value_failures.dart';
 
+import 'errors.dart';
+
 @immutable
 abstract class ValueObject<T> {
   Either<ValueFailure<T>, T> get value;
 
-  ValueObject();
+  const ValueObject();
+
+  T getOrCrash() => value.fold(
+        (failure) => throw UnexpectedValueError(failure),
+        // (r) => r  == id,
+        id,
+      );
 
   @override
   bool operator ==(Object other) {
