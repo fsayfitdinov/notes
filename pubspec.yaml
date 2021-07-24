@@ -11,6 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  auto_route: ^2.2.0
   cupertino_icons: ^1.0.3
   dartz: ^0.10.0-nullsafety.2
   firebase_auth: ^3.0.1
@@ -22,10 +23,12 @@ dependencies:
   get_it: ^7.2.0
   google_sign_in: ^5.0.5
   injectable: ^1.4.1
+  uuid: ^3.0.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  auto_route_generator: ^2.1.0
   build_runner: null
   freezed: ^0.14.1
   injectable_generator: ^1.4.1
