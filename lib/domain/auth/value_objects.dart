@@ -7,8 +7,7 @@ import '../core/value_validators.dart';
 class EmailAddress extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
-  factory EmailAddress(String input) =>
-      EmailAddress._(validateEmailAddress(input));
+  factory EmailAddress(String input) => EmailAddress._(validateEmailAddress(input));
 
   EmailAddress._(this.value);
 }

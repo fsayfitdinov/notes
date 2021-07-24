@@ -15,12 +15,16 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.3
   dartz: ^0.10.0-nullsafety.2
+  firebase_auth: ^3.0.1
+  firebase_core: ^1.4.0
+  flutter_bloc: ^7.0.1
   freezed_annotation: ^0.14.1
+  google_sign_in: ^5.0.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner:
+  build_runner: null
   freezed: ^0.14.1
 
 # For information on the generic Dart part of this file, see the
