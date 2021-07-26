@@ -8,6 +8,7 @@ import 'app_theme_data.dart';
 
 class AppWidget extends StatelessWidget {
   final _appRouter = AppRouter();
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(

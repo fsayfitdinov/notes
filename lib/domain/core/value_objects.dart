@@ -17,13 +17,18 @@ abstract class ValueObject<T> {
         id,
       );
 
+  bool isValid() => value.isRight();
+
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit => value.fold(
+        (l) => left(l),
+        (r) => right(unit),
+      );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     return other is ValueObject<T> && other.value == value;
   }
-
-  bool isValid() => value.isRight();
 
   @override
   int get hashCode => value.hashCode;
