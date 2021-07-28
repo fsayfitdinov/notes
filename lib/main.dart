@@ -9,8 +9,8 @@ import 'presentation/core/app_widget.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   configureInjection(Environment.dev);
+  await Firebase.initializeApp();
   Bloc.observer = SimpleBlocObserver();
   runApp(AppWidget());
 }

@@ -41,8 +41,9 @@ class NoteDto with _$NoteDto {
         todos: List3(todos.map((dto) => dto.toDomain()).toImmutableList()),
       );
 
-  factory NoteDto.fromFirestore(DocumentSnapshot doc) =>
-      NoteDto.fromJson(doc.data as Map<String, dynamic>).copyWith(id: doc.id);
+  factory NoteDto.fromFirestore(DocumentSnapshot doc) {
+    return NoteDto.fromJson(doc.data()! as Map<String, dynamic>).copyWith(id: doc.id);
+  }
 }
 
 @freezed

@@ -1,9 +1,12 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flash/flash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../application/auth/auth_bloc.dart';
 import '../../../application/auth/sign_in_form/sign_in_form_bloc.dart';
 import '../../core/widgets/default_text_button.dart';
+import '../../routes/router.gr.dart';
 import 'custom_prefix_icon.dart';
 
 class SignInForm extends StatelessWidget {
@@ -27,14 +30,16 @@ class SignInForm extends StatelessWidget {
               ),
             ),
             (r) {
-              // TODO navigation
+              context.router.replace(const NotesOverviewRoute());
+              context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());
             },
           ),
         );
       },
       builder: (context, state) {
         return Form(
-          autovalidateMode: state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+          autovalidateMode:
+              state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
           child: ListView(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             children: <Widget>[
@@ -92,7 +97,9 @@ class SignInForm extends StatelessWidget {
                     child: DefaultTextButton(
                       color: Colors.blue,
                       press: () {
-                        context.read<SignInFormBloc>().add(const SignInFormEvent.signInEmailPasswordPressed());
+                        context
+                            .read<SignInFormBloc>()
+                            .add(const SignInFormEvent.signInEmailPasswordPressed());
                       },
                       title: 'Login',
                     ),
@@ -102,7 +109,9 @@ class SignInForm extends StatelessWidget {
                     child: DefaultTextButton(
                       color: Colors.white,
                       press: () {
-                        context.read<SignInFormBloc>().add(const SignInFormEvent.registerEmailPasswordPressed());
+                        context
+                            .read<SignInFormBloc>()
+                            .add(const SignInFormEvent.registerEmailPasswordPressed());
                       },
                       title: 'Sign Up',
                       textColor: Colors.black,

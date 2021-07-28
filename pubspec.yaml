@@ -20,12 +20,15 @@ dependencies:
   flash: ^2.0.1
   flutter_bloc: ^7.0.1
   flutter_hooks: ^0.18.0
+  flutter_slidable: ^0.6.0
   freezed_annotation: ^0.14.1
   get_it: ^7.2.0
   google_sign_in: ^5.0.5
+  implicitly_animated_reorderable_list: ^0.4.0
   injectable: ^1.4.1
   json_annotation: ^4.0.1
   kt_dart: ^0.9.1
+  provider: ^5.0.0
   rxdart: ^0.27.1
   uuid: ^3.0.4
 
