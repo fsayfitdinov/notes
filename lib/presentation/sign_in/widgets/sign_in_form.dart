@@ -38,8 +38,7 @@ class SignInForm extends StatelessWidget {
       },
       builder: (context, state) {
         return Form(
-          autovalidateMode:
-              state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+          autovalidateMode: state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
           child: ListView(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             children: <Widget>[
@@ -97,9 +96,7 @@ class SignInForm extends StatelessWidget {
                     child: DefaultTextButton(
                       color: Colors.blue,
                       press: () {
-                        context
-                            .read<SignInFormBloc>()
-                            .add(const SignInFormEvent.signInEmailPasswordPressed());
+                        context.read<SignInFormBloc>().add(const SignInFormEvent.signInEmailPasswordPressed());
                       },
                       title: 'Login',
                     ),
@@ -109,9 +106,7 @@ class SignInForm extends StatelessWidget {
                     child: DefaultTextButton(
                       color: Colors.white,
                       press: () {
-                        context
-                            .read<SignInFormBloc>()
-                            .add(const SignInFormEvent.registerEmailPasswordPressed());
+                        context.read<SignInFormBloc>().add(const SignInFormEvent.registerEmailPasswordPressed());
                       },
                       title: 'Sign Up',
                       textColor: Colors.black,

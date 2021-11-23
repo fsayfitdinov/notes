@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:notes/domain/core/value_failures.dart';
 import 'package:uuid/uuid.dart';
 
 import 'errors.dart';
+import 'value_failures.dart';
 
 @immutable
 abstract class ValueObject<T> {
